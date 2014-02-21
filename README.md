@@ -15,6 +15,7 @@ A decent OS (Linux comes to mind)
 
 #Installation
 
+Clone the repository then run:
 ```bash
 bundle install
 ```
