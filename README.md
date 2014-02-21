@@ -7,7 +7,7 @@ Currently this script can install PrestaShop in all languages and report success
 
 #Warning
 
-This will do dangerous things without asking for permission. Use with caution and on development machine :)
+This will do dangerous things without asking for permission. Use with caution and on a development machine :)
 
 #Prerequisite
 
