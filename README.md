@@ -9,7 +9,7 @@ Currently this script can install PrestaShop in all languages and report success
 
 This will do dangerous things without asking for permission. Use with caution and on a development machine :)
 
-#Prerequisite
+#Prerequisites
 
 A decent OS (Linux comes to mind)
 
