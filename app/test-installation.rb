@@ -5,9 +5,6 @@ require 'selenium-webdriver'
 
 require_relative '../lib/installer.rb'
 
-languages = %w(de en es fr id it nl pl br ru bn tw zh)
-countries = %w(fr de lu it nl ru us)
-
 global_config = YAML::load_file('config/global.yaml')
 
 configs = {
@@ -24,6 +21,7 @@ configs = {
 	'bn' => ['bd', 'fr'],
 	'tw' => ['tw', 'fr'],
 	'zh' => ['cn', 'fr'],
+	'mk' => ['mk', 'fr'],
 }
 
 configs.each_pair do |installLanguage, cs|
