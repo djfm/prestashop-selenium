@@ -5,7 +5,7 @@ require 'fileutils'
 class Installer
 	def initialize config, options={}
 		@repo = "https://github.com/PrestaShop/PrestaShop"
-		@branch = "1.6"
+		@branch = "release"
 		@root = config['root']
 		@webRoot = config['webRoot']
 		@store = YAML::Store.new "#{File.dirname(__FILE__)}/installed.store"
@@ -124,16 +124,20 @@ class Installer
 		dbNameElement.clear
 		dbNameElement.send_keys(options[:dbName])
 
+		sleep 5
 		driver.find_element(:id => 'btNext').click
+		sleep 5
 		
-		wait = Selenium::WebDriver::Wait.new(:timeout => 60)
-  		wait.until { driver.find_element(:id => 'btCreateDB').click }
+		puts "Waiting for create DB button..."
+		wait0 = Selenium::WebDriver::Wait.new(:timeout => 60)
+  		wait0.until { driver.find_element(:id => 'btCreateDB') }
+  		driver.find_element(:id => 'btCreateDB').click
 
-
+  		puts "DB should be created, proceeding..."
 		driver.find_element(:id => 'btNext').click
 
-		wait = Selenium::WebDriver::Wait.new(:timeout => 60)
-  		wait.until { driver.find_element(:xpath => '//a[@class="FO"]').displayed? }
+		wait1 = Selenium::WebDriver::Wait.new(:timeout => 60)
+  		wait1.until { driver.find_element(:xpath => '//a[@class="FO"]').displayed? }
 		true
 	end
 end
