@@ -125,7 +125,11 @@ class Installer
 		dbNameElement.send_keys(options[:dbName])
 
 		driver.find_element(:id => 'btNext').click
-		driver.find_element(:id => 'btCreateDB').click
+		
+		wait = Selenium::WebDriver::Wait.new(:timeout => 60)
+  		wait.until { driver.find_element(:id => 'btCreateDB').click }
+
+
 		driver.find_element(:id => 'btNext').click
 
 		wait = Selenium::WebDriver::Wait.new(:timeout => 60)
