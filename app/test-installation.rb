@@ -8,6 +8,9 @@ require_relative '../lib/installer.rb'
 global_config = YAML::load_file('config/global.yaml')
 
 configs = {
+	'tr' => ['tr', 'fr'],
+	'cs' => ['cz', 'fr'],
+	'fa' => ['ir', 'fr'],
 	'de' => ['de', 'fr'],
 	'en' => ['us', 'fr'],
 	'es' => ['es', 'fr'],
@@ -21,7 +24,7 @@ configs = {
 	'bn' => ['bd', 'fr'],
 	'tw' => ['tw', 'fr'],
 	'zh' => ['cn', 'fr'],
-	'mk' => ['mk', 'fr'],
+	'mk' => ['mk', 'fr']
 }
 
 configs.each_pair do |installLanguage, cs|

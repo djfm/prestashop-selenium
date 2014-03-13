@@ -17,6 +17,7 @@ class Installer
 
 	def getFilesTo folderPath
 		cmd = "git clone #{@repo} -b #{@branch} #{folderPath}"
+		puts "Running: #{cmd}"
 		clone_status = Open3.popen3 cmd do |i, o, e, t|
 			
 			i.close
